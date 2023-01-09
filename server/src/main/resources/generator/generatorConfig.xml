@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--Overwrite generated XML file-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <!-- The generated entity class adds the toString() method -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+        <!-- do not generate comments -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/courseimooc"
+                        userId="courseimooc"
+                        password="courseimooc">
+        </jdbcConnection>
+
+        <!-- The location of the domain class -->
+        <javaModelGenerator targetProject="src\main\java"
+                            targetPackage="com.course.server.domain"/>
+
+        <!-- mapper xml's location -->
+        <sqlMapGenerator targetProject="src\main\resources"
+                         targetPackage="mapper"/>
+
+        <!-- mapper's location -->
+        <javaClientGenerator targetProject="src\main\java"
+                             targetPackage="com.course.server.mapper"
+                             type="XMLMAPPER" />
+
+<!--        <table tableName="sms" domainObjectName="Sms"/>-->
+        <table tableName="member_course" domainObjectName="MemberCourse"/>
+    </context>
+</generatorConfiguration>
