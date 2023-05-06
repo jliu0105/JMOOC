@@ -1,6 +1,6 @@
 # JMOOC: An online Learning Platform
 JMOOC is an online learning platform that offers a wide range of courses for users to explore, review, and purchase. The platform comes with an interactive control panel for maintainers to manage course content and user information. It leverages MyBatis to provide a caching layer for queries and transactions, resulting in improved performance.
-<br>
+<br><br>
 Built with Java, Spring Boot, Spring Cloud, Vue, JavaScript, Redis, MySQL, Bootstrap, Maven, and Docker.
 
 ## Table of Contents
@@ -11,28 +11,61 @@ Built with Java, Spring Boot, Spring Cloud, Vue, JavaScript, Redis, MySQL, Boots
 [Contribution](#contribution)<br>
 
 
-## Introduction 
-Recurrent Neural Networks are a type of artificial neural network designed to handle sequences of data, making them ideal for time series analysis. This project uses an RNN with Long Short-Term Memory (LSTM) cells to predict the future stock price of Google based on historical data.
-
-### Features 
-* Stock price prediction using historical data
-* Recurrent Neural Networks with LSTM cells
-* Visualization of the predicted stock prices
-* Easy-to-use command line interface
+## Features 
+* __User Authentication__: Users can create accounts and log in to access the platform securely.
+* __Course Catalog__: A comprehensive list of courses, sortable by category, rating, and other filters.
+* __Course Reviews__: Users can review and rate courses, providing valuable feedback for potential learners and course creators.
+* __Purchase Courses__: Secure payment system allowing users to purchase their desired courses.
+* __Interactive Control Panel__: Maintain the platform, edit course details, upload files, videos, and review user information.
+* __MyBatis Caching__: Optimized performance using MyBatis caching for queries and transactions.
 
 ## Requirement
-* Python 3.8 +
-* Numpy
-* Pandas
-* TensorFlow
-* Scikit-learn
+* Java 8+
+* Maven 3.6+
+* Docker
+* MySQL
+* Redis
 
 ## Installation
+
+### clone the repo
 ```bash
-git clone https://github.com/jliu0105/stock_price_predictor.git
+git clone https://github.com/jliu0105/JMOOC.git
 ```
 
+### Install the required dependencies:
+```bash
+npm install
+```
+
+### Build the project:
+```bash
+mvn clean package
+```
+### Build the docker image
+```bash
+docker build -t jmooc .
+```
+
+### Run the docker container:
+```bash
+docker run -p 8080:8080 --name jmooc jmooc
+```
+Access the application at http://localhost:8080.
+
 ## Usage
+
+### User
+* Register for an account or log in to an existing one.
+* Browse the course catalog and filter the courses as needed.
+* Review and rate courses to provide feedback.
+* Purchase courses using the secure payment system.
+
+### Maintainer
+* Access the interactive control panel using the maintainer's credentials.
+* Edit course details, such as title, description, and category.
+* Upload files and videos for the courses.
+* Review and manage user information.
 
 ## Contribution
 We welcome contributions from the community! If you're interested in contributing to this project, please follow these steps:
